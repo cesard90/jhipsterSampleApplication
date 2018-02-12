@@ -43,8 +43,8 @@ public class HotelResourceIntTest {
     private static final String DEFAULT_NOMBRE = "AAAAAAAAAA";
     private static final String UPDATED_NOMBRE = "BBBBBBBBBB";
 
-    private static final Estrellas DEFAULT_ESTRELLAS = Estrellas.1;
-    private static final Estrellas UPDATED_ESTRELLAS = Estrellas.2;
+    private static final Estrellas DEFAULT_ESTRELLAS = Estrellas.UNO;
+    private static final Estrellas UPDATED_ESTRELLAS = Estrellas.DOS;
 
     private static final String DEFAULT_DIRECCION = "AAAAAAAAAA";
     private static final String UPDATED_DIRECCION = "BBBBBBBBBB";

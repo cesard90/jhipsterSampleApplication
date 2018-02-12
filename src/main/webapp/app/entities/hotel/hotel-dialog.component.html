@@ -26,11 +26,11 @@
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.hotel.estrellas" for="field_estrellas">Estrellas</label>
             <select class="form-control" name="estrellas" [(ngModel)]="hotel.estrellas" id="field_estrellas"  required>
-                <option value="1">{{'jhipsterSampleApplicationApp.Estrellas.1' | translate}}</option>
-                <option value="2">{{'jhipsterSampleApplicationApp.Estrellas.2' | translate}}</option>
-                <option value="3">{{'jhipsterSampleApplicationApp.Estrellas.3' | translate}}</option>
-                <option value="4">{{'jhipsterSampleApplicationApp.Estrellas.4' | translate}}</option>
-                <option value="5">{{'jhipsterSampleApplicationApp.Estrellas.5' | translate}}</option>
+                <option value="UNO">{{'jhipsterSampleApplicationApp.Estrellas.UNO' | translate}}</option>
+                <option value="DOS">{{'jhipsterSampleApplicationApp.Estrellas.DOS' | translate}}</option>
+                <option value="TRES">{{'jhipsterSampleApplicationApp.Estrellas.TRES' | translate}}</option>
+                <option value="CUATRO">{{'jhipsterSampleApplicationApp.Estrellas.CUATRO' | translate}}</option>
+                <option value="CINCO">{{'jhipsterSampleApplicationApp.Estrellas.CINCO' | translate}}</option>
             </select>
             <div [hidden]="!(editForm.controls.estrellas?.dirty && editForm.controls.estrellas?.invalid)">
                 <small class="form-text text-danger"

@@ -1,0 +1,70 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "hotel",
+            "otherEntityName": "hotel",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "categoria",
+            "otherEntityName": "categoria",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "llamada",
+            "otherEntityName": "llamada",
+            "otherEntityField": "minutos"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "tipoHabitacion",
+            "otherEntityName": "tipoHabitacion",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "habitacion",
+            "relationshipName": "reserva",
+            "otherEntityName": "reserva",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "piso",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ocupada",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "codigo",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180212052607",
+    "entityTableName": "habitacion",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

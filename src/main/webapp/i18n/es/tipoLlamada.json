@@ -1,0 +1,24 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "tipoLlamada" : {
+            "home": {
+                "title": "Tipo Llamadas",
+                "createLabel": "Crear nuevo Tipo Llamada",
+                "createOrEditLabel": "Crear o editar Tipo Llamada",
+                "search": "Search for Tipo Llamada"
+            },
+            "created": "Un nuevo Tipo Llamada ha sido creado con el identificador {{ param }}",
+            "updated": "Un Tipo Llamada ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Tipo Llamada ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Tipo Llamada {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo Llamada"
+            },
+            "nombre": "Nombre",
+            "precio": "Precio"
+        }
+    }
+}

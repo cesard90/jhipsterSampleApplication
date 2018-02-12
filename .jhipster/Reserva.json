@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "tipoHabitacion",
+            "otherEntityName": "tipoHabitacion",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "habitacion",
+            "otherEntityName": "habitacion",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "reserva"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "fechaInicio",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fechaFin",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fechaReserva",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "camaAdicional",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "precioVentaReserva",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180212052609",
+    "entityTableName": "reserva",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

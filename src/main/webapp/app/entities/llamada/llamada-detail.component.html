@@ -1,0 +1,32 @@
+
+<div *ngIf="llamada">
+    <h2><span jhiTranslate="jhipsterSampleApplicationApp.llamada.detail.title">Llamada</span> {{llamada.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.llamada.minutos">Minutos</span></dt>
+        <dd>
+            <span>{{llamada.minutos}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.llamada.tipoLlamada">Tipo Llamada</span></dt>
+        <dd>
+            <div *ngIf="llamada.tipoLlamada">
+                <a [routerLink]="['/tipo-llamada', llamada.tipoLlamada?.id]">{{llamada.tipoLlamada?.nombre}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'llamada/'+ llamada.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

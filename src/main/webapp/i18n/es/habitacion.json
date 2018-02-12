@@ -1,0 +1,31 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "habitacion" : {
+            "home": {
+                "title": "Habitacions",
+                "createLabel": "Crear nuevo Habitacion",
+                "createOrEditLabel": "Crear o editar Habitacion",
+                "search": "Search for Habitacion"
+            },
+            "created": "Un nuevo Habitacion ha sido creado con el identificador {{ param }}",
+            "updated": "Un Habitacion ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Habitacion ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Habitacion {{ id }}?"
+            },
+            "detail": {
+                "title": "Habitacion"
+            },
+            "descripcion": "Descripcion",
+            "piso": "Piso",
+            "ocupada": "Ocupada",
+            "codigo": "Codigo",
+            "hotel": "Hotel",
+            "categoria": "Categoria",
+            "llamada": "Llamada",
+            "tipoHabitacion": "Tipo Habitacion",
+            "reserva": "Reserva"
+        }
+    }
+}

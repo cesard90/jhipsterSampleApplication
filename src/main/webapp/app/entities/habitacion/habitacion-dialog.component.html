@@ -1,0 +1,109 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myHabitacionLabel" jhiTranslate="jhipsterSampleApplicationApp.habitacion.home.createOrEditLabel">Create or edit a Habitacion</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!habitacion.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="habitacion.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.habitacion.descripcion" for="field_descripcion">Descripcion</label>
+            <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                [(ngModel)]="habitacion.descripcion" required/>
+            <div [hidden]="!(editForm.controls.descripcion?.dirty && editForm.controls.descripcion?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.descripcion?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.habitacion.piso" for="field_piso">Piso</label>
+            <input type="text" class="form-control" name="piso" id="field_piso"
+                [(ngModel)]="habitacion.piso" required/>
+            <div [hidden]="!(editForm.controls.piso?.dirty && editForm.controls.piso?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.piso?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.habitacion.ocupada" for="field_ocupada">Ocupada</label>
+            <input type="checkbox" class="form-control" name="ocupada" id="field_ocupada"
+                [(ngModel)]="habitacion.ocupada" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.habitacion.codigo" for="field_codigo">Codigo</label>
+            <input type="text" class="form-control" name="codigo" id="field_codigo"
+                [(ngModel)]="habitacion.codigo" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.habitacion.hotel" for="field_hotel">Hotel</label>
+            <select class="form-control" id="field_hotel" name="hotel" [(ngModel)]="habitacion.hotel" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="hotelOption.id === habitacion.hotel?.id ? habitacion.hotel : hotelOption" *ngFor="let hotelOption of hotels; trackBy: trackHotelById">{{hotelOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.habitacion.categoria" for="field_categoria">Categoria</label>
+            <select class="form-control" id="field_categoria" name="categoria" [(ngModel)]="habitacion.categoria"  required>
+                <option *ngIf="!editForm.value.categoria" [ngValue]="null" selected></option>
+                <option [ngValue]="categoriaOption.id === habitacion.categoria?.id ? habitacion.categoria : categoriaOption" *ngFor="let categoriaOption of categorias; trackBy: trackCategoriaById">{{categoriaOption.nombre}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.categoria?.dirty && editForm.controls.categoria?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.categoria?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.habitacion.llamada" for="field_llamada">Llamada</label>
+            <select class="form-control" id="field_llamada" name="llamada" [(ngModel)]="habitacion.llamada"  required>
+                <option *ngIf="!editForm.value.llamada" [ngValue]="null" selected></option>
+                <option [ngValue]="llamadaOption.id === habitacion.llamada?.id ? habitacion.llamada : llamadaOption" *ngFor="let llamadaOption of llamadas; trackBy: trackLlamadaById">{{llamadaOption.minutos}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.llamada?.dirty && editForm.controls.llamada?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.llamada?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.habitacion.tipoHabitacion" for="field_tipoHabitacion">Tipo Habitacion</label>
+            <select class="form-control" id="field_tipoHabitacion" name="tipoHabitacion" [(ngModel)]="habitacion.tipoHabitacion"  required>
+                <option *ngIf="!editForm.value.tipoHabitacion" [ngValue]="null" selected></option>
+                <option [ngValue]="tipoHabitacionOption.id === habitacion.tipoHabitacion?.id ? habitacion.tipoHabitacion : tipoHabitacionOption" *ngFor="let tipoHabitacionOption of tipohabitacions; trackBy: trackTipoHabitacionById">{{tipoHabitacionOption.nombre}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.tipoHabitacion?.dirty && editForm.controls.tipoHabitacion?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.tipoHabitacion?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="jhipsterSampleApplicationApp.habitacion.reserva" for="field_reserva">Reserva</label>
+            <select class="form-control" id="field_reserva" multiple name="reserva" [(ngModel)]="habitacion.reservas">
+                <option [ngValue]="getSelected(habitacion.reservas, reservaOption)" *ngFor="let reservaOption of reservas; trackBy: trackReservaById">{{reservaOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

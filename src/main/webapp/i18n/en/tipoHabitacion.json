@@ -1,0 +1,24 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "tipoHabitacion" : {
+            "home": {
+                "title": "Tipo Habitacions",
+                "createLabel": "Create a new Tipo Habitacion",
+                "createOrEditLabel": "Create or edit a Tipo Habitacion",
+                "search": "Search for Tipo Habitacion"
+            },
+            "created": "A new Tipo Habitacion is created with identifier {{ param }}",
+            "updated": "A Tipo Habitacion is updated with identifier {{ param }}",
+            "deleted": "A Tipo Habitacion is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tipo Habitacion {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo Habitacion"
+            },
+            "nombre": "Nombre",
+            "precio": "Precio"
+        }
+    }
+}

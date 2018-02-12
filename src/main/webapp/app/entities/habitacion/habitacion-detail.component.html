@@ -1,0 +1,68 @@
+
+<div *ngIf="habitacion">
+    <h2><span jhiTranslate="jhipsterSampleApplicationApp.habitacion.detail.title">Habitacion</span> {{habitacion.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.habitacion.descripcion">Descripcion</span></dt>
+        <dd>
+            <span>{{habitacion.descripcion}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.habitacion.piso">Piso</span></dt>
+        <dd>
+            <span>{{habitacion.piso}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.habitacion.ocupada">Ocupada</span></dt>
+        <dd>
+            <span>{{habitacion.ocupada}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.habitacion.codigo">Codigo</span></dt>
+        <dd>
+            <span>{{habitacion.codigo}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.habitacion.hotel">Hotel</span></dt>
+        <dd>
+            <div *ngIf="habitacion.hotel">
+                <a [routerLink]="['/hotel', habitacion.hotel?.id]">{{habitacion.hotel?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.habitacion.categoria">Categoria</span></dt>
+        <dd>
+            <div *ngIf="habitacion.categoria">
+                <a [routerLink]="['/categoria', habitacion.categoria?.id]">{{habitacion.categoria?.nombre}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.habitacion.llamada">Llamada</span></dt>
+        <dd>
+            <div *ngIf="habitacion.llamada">
+                <a [routerLink]="['/llamada', habitacion.llamada?.id]">{{habitacion.llamada?.minutos}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.habitacion.tipoHabitacion">Tipo Habitacion</span></dt>
+        <dd>
+            <div *ngIf="habitacion.tipoHabitacion">
+                <a [routerLink]="['/tipo-habitacion', habitacion.tipoHabitacion?.id]">{{habitacion.tipoHabitacion?.nombre}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.habitacion.reserva">Reserva</span></dt>
+        <dd>
+            <span *ngFor="let reserva of habitacion.reservas; let last = last">
+                <a [routerLink]="['/reserva', reserva?.id ]">{{reserva.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'habitacion/'+ habitacion.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

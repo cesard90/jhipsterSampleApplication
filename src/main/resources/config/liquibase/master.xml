@@ -5,6 +5,16 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212052606_added_entity_Hotel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212052607_added_entity_Habitacion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212052608_added_entity_TipoHabitacion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212052609_added_entity_Reserva.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212052610_added_entity_Llamada.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212052611_added_entity_TipoLlamada.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212052612_added_entity_Categoria.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180212052607_added_entity_constraints_Habitacion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212052609_added_entity_constraints_Reserva.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212052610_added_entity_constraints_Llamada.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

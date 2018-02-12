@@ -1,0 +1,24 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "tipoLlamada" : {
+            "home": {
+                "title": "Tipo Llamadas",
+                "createLabel": "Create a new Tipo Llamada",
+                "createOrEditLabel": "Create or edit a Tipo Llamada",
+                "search": "Search for Tipo Llamada"
+            },
+            "created": "A new Tipo Llamada is created with identifier {{ param }}",
+            "updated": "A Tipo Llamada is updated with identifier {{ param }}",
+            "deleted": "A Tipo Llamada is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tipo Llamada {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo Llamada"
+            },
+            "nombre": "Nombre",
+            "precio": "Precio"
+        }
+    }
+}

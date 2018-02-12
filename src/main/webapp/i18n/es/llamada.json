@@ -1,0 +1,24 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "llamada" : {
+            "home": {
+                "title": "Llamadas",
+                "createLabel": "Crear nuevo Llamada",
+                "createOrEditLabel": "Crear o editar Llamada",
+                "search": "Search for Llamada"
+            },
+            "created": "Un nuevo Llamada ha sido creado con el identificador {{ param }}",
+            "updated": "Un Llamada ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Llamada ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Llamada {{ id }}?"
+            },
+            "detail": {
+                "title": "Llamada"
+            },
+            "minutos": "Minutos",
+            "tipoLlamada": "Tipo Llamada"
+        }
+    }
+}

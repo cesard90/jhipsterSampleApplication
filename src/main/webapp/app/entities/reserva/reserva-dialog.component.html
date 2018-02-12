@@ -1,0 +1,89 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myReservaLabel" jhiTranslate="jhipsterSampleApplicationApp.reserva.home.createOrEditLabel">Create or edit a Reserva</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!reserva.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="reserva.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.reserva.fechaInicio" for="field_fechaInicio">Fecha Inicio</label>
+            <div class="d-flex">
+                <input id="field_fechaInicio" type="datetime-local" class="form-control" name="fechaInicio" [(ngModel)]="reserva.fechaInicio"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.fechaInicio?.dirty && editForm.controls.fechaInicio?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.fechaInicio?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.fechaInicio?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.reserva.fechaFin" for="field_fechaFin">Fecha Fin</label>
+            <div class="d-flex">
+                <input id="field_fechaFin" type="datetime-local" class="form-control" name="fechaFin" [(ngModel)]="reserva.fechaFin"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.fechaFin?.dirty && editForm.controls.fechaFin?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.fechaFin?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.fechaFin?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.reserva.fechaReserva" for="field_fechaReserva">Fecha Reserva</label>
+            <div class="d-flex">
+                <input id="field_fechaReserva" type="datetime-local" class="form-control" name="fechaReserva" [(ngModel)]="reserva.fechaReserva"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.reserva.camaAdicional" for="field_camaAdicional">Cama Adicional</label>
+            <input type="checkbox" class="form-control" name="camaAdicional" id="field_camaAdicional"
+                [(ngModel)]="reserva.camaAdicional" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.reserva.precioVentaReserva" for="field_precioVentaReserva">Precio Venta Reserva</label>
+            <input type="number" class="form-control" name="precioVentaReserva" id="field_precioVentaReserva"
+                [(ngModel)]="reserva.precioVentaReserva" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.reserva.tipoHabitacion" for="field_tipoHabitacion">Tipo Habitacion</label>
+            <select class="form-control" id="field_tipoHabitacion" name="tipoHabitacion" [(ngModel)]="reserva.tipoHabitacion"  required>
+                <option *ngIf="!editForm.value.tipoHabitacion" [ngValue]="null" selected></option>
+                <option [ngValue]="tipoHabitacionOption.id === reserva.tipoHabitacion?.id ? reserva.tipoHabitacion : tipoHabitacionOption" *ngFor="let tipoHabitacionOption of tipohabitacions; trackBy: trackTipoHabitacionById">{{tipoHabitacionOption.nombre}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.tipoHabitacion?.dirty && editForm.controls.tipoHabitacion?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.tipoHabitacion?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

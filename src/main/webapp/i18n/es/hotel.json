@@ -1,0 +1,28 @@
+
+{
+    "jhipsterSampleApplicationApp": {
+        "hotel" : {
+            "home": {
+                "title": "Hotels",
+                "createLabel": "Crear nuevo Hotel",
+                "createOrEditLabel": "Crear o editar Hotel",
+                "search": "Search for Hotel"
+            },
+            "created": "Un nuevo Hotel ha sido creado con el identificador {{ param }}",
+            "updated": "Un Hotel ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Hotel ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Hotel {{ id }}?"
+            },
+            "detail": {
+                "title": "Hotel"
+            },
+            "nombre": "Nombre",
+            "estrellas": "Estrellas",
+            "direccion": "Direccion",
+            "ciudad": "Ciudad",
+            "telefono": "Telefono",
+            "habitacion": "Habitacion"
+        }
+    }
+}

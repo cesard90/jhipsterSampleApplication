@@ -1,0 +1,48 @@
+
+<div *ngIf="reserva">
+    <h2><span jhiTranslate="jhipsterSampleApplicationApp.reserva.detail.title">Reserva</span> {{reserva.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.reserva.fechaInicio">Fecha Inicio</span></dt>
+        <dd>
+            <span>{{reserva.fechaInicio | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.reserva.fechaFin">Fecha Fin</span></dt>
+        <dd>
+            <span>{{reserva.fechaFin | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.reserva.fechaReserva">Fecha Reserva</span></dt>
+        <dd>
+            <span>{{reserva.fechaReserva | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.reserva.camaAdicional">Cama Adicional</span></dt>
+        <dd>
+            <span>{{reserva.camaAdicional}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.reserva.precioVentaReserva">Precio Venta Reserva</span></dt>
+        <dd>
+            <span>{{reserva.precioVentaReserva}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.reserva.tipoHabitacion">Tipo Habitacion</span></dt>
+        <dd>
+            <div *ngIf="reserva.tipoHabitacion">
+                <a [routerLink]="['/tipo-habitacion', reserva.tipoHabitacion?.id]">{{reserva.tipoHabitacion?.nombre}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'reserva/'+ reserva.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

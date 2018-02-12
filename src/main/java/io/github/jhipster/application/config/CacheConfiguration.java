@@ -46,6 +46,16 @@ public class CacheConfiguration {
             cm.createCache(io.github.jhipster.application.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Hotel.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Hotel.class.getName() + ".habitacions", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Habitacion.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Habitacion.class.getName() + ".reservas", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.TipoHabitacion.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Reserva.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Reserva.class.getName() + ".habitacions", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Llamada.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.TipoLlamada.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Categoria.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

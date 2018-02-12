@@ -1,0 +1,30 @@
+
+<div *ngIf="categoria">
+    <h2><span jhiTranslate="jhipsterSampleApplicationApp.categoria.detail.title">Categoria</span> {{categoria.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.categoria.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{categoria.nombre}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.categoria.precio">Precio</span></dt>
+        <dd>
+            <span>{{categoria.precio}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'categoria/'+ categoria.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

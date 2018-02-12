@@ -1,14 +1,14 @@
 entity Hotel{
-	nombre  String,
-    estrellas Integer,
-    direccion String, 
+	nombre  String required ,
+    estrellas Estrellas required ,
+    direccion String required , 
     ciudad String,
     telefono String
 }
 
 entity Habitacion{
-	descripcion String,
-    piso String,
+	descripcion String required ,
+    piso String required ,
     ocupada Boolean,
     codigo String
 }
@@ -19,9 +19,9 @@ entity TipoHabitacion{
 }
 
 entity Reserva{
-	fechaInicio Date,
-    fechaFin Date,
-    fechaReserva Date,
+	fechaInicio ZonedDateTime required ,
+    fechaFin ZonedDateTime required ,
+    fechaReserva ZonedDateTime,
     camaAdicional Boolean,
     precioVentaReserva Double
 }
@@ -31,14 +31,18 @@ entity Llamada{
 }
 
 entity TipoLlamada{
-	nombre String,
+	nombre String required ,
     precio Double
 }
 
 entity Categoria{
-	nombre String,
+	nombre String required ,
     precio Double
 }
+
+enum Estrellas {
+    1,2,3,4,5
+  }
 
 relationship OneToMany {
       Hotel{habitacion(id)} to Habitacion
@@ -46,15 +50,15 @@ relationship OneToMany {
 }
 
 relationship ManyToOne {
-    Habitacion{categoria(id)} to Categoria,
-    Habitacion{llamada(id)} to Llamada,
-    Habitacion{tipoHabitacion(id)} to TipoHabitacion,
-    Llamada{tipoLlamada(id)} to TipoLlamada,
-    Reserva{tipoHabitacion(id)} to TipoHabitacion
+    Habitacion{categoria(nombre) required} to Categoria ,
+    Habitacion{llamada(minutos) required} to Llamada,
+    Habitacion{tipoHabitacion(nombre) required} to TipoHabitacion,
+    Llamada{tipoLlamada(nombre) required} to TipoLlamada,
+    Reserva{tipoHabitacion(nombre) required} to TipoHabitacion
 }
 
 relationship ManyToMany{
-    Habitacion{reserva(id)} to Reserva{habitacion(id)}
+    Habitacion{reserva(id) } to Reserva{habitacion(id)}
 }
 
 paginate Hotel, Habitacion, TipoHabitacion, Reserva, Categoria, TipoLlamada, Llamada with infinite-scroll

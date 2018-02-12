@@ -19,7 +19,7 @@
         {
             "fieldName": "estrellas",
             "fieldType": "Estrellas",
-            "fieldValues": "1,2,3,4,5",
+            "fieldValues": "UNO,DOS,TRES,CUATRO,CINCO",
             "fieldValidateRules": [
                 "required"
             ]

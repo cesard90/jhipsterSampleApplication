@@ -1,11 +1,11 @@
 import { BaseEntity } from './../../shared';
 
 export const enum Estrellas {
-    '1',
-    '2',
-    '3',
-    '4',
-    '5'
+    'UNO',
+    'DOS',
+    'TRES',
+    'CUATRO',
+    'CINCO'
 }
 
 export class Hotel implements BaseEntity {

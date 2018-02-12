@@ -2,11 +2,11 @@
     "jhipsterSampleApplicationApp": {
         "Estrellas" : {
             "null": "",
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5"
+            "UNO": "UNO",
+            "DOS": "DOS",
+            "TRES": "TRES",
+            "CUATRO": "CUATRO",
+            "CINCO": "CINCO"
         }
     }
 }

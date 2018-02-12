@@ -1,0 +1,60 @@
+entity Hotel{
+	nombre  String,
+    estrellas Integer,
+    direccion String, 
+    ciudad String,
+    telefono String
+}
+
+entity Habitacion{
+	descripcion String,
+    piso String,
+    ocupada Boolean,
+    codigo String
+}
+
+entity TipoHabitacion{
+	nombre String,
+    precio Double
+}
+
+entity Reserva{
+	fechaInicio Date,
+    fechaFin Date,
+    fechaReserva Date,
+    camaAdicional Boolean,
+    precioVentaReserva Double
+}
+
+entity Llamada{
+	minutos Double 
+}
+
+entity TipoLlamada{
+	nombre String,
+    precio Double
+}
+
+entity Categoria{
+	nombre String,
+    precio Double
+}
+
+relationship OneToMany {
+      Hotel{habitacion(id)} to Habitacion
+     
+}
+
+relationship ManyToOne {
+    Habitacion{categoria(id)} to Categoria,
+    Habitacion{llamada(id)} to Llamada,
+    Habitacion{tipoHabitacion(id)} to TipoHabitacion,
+    Llamada{tipoLlamada(id)} to TipoLlamada,
+    Reserva{tipoHabitacion(id)} to TipoHabitacion
+}
+
+relationship ManyToMany{
+    Habitacion{reserva(id)} to Reserva{habitacion(id)}
+}
+
+paginate Hotel, Habitacion, TipoHabitacion, Reserva, Categoria, TipoLlamada, Llamada with infinite-scroll
